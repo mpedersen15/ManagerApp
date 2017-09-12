@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput } from 'react-native';
 
-const FormField = ({label, placeholder, onChangeText, value, secureTextEntry}) => {
+const FormField = ({ label, placeholder, onChangeText, value, secureTextEntry }) => {
     const { inputStyle, labelStyle, containerStyle } = styles;
     return (
         <View style={containerStyle}>
