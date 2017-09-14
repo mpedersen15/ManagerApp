@@ -30,7 +30,7 @@ class EmployeeList extends Component {
         return <ListItem employee={employee} />;
     }
 
-    render() {
+    render() {       
         return (
             <ListView 
                 enableEmptySections
