@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { employeeFormUpdated, employeeCreate } from '../actions';
+import { employeeFormUpdated, employeeEdit } from '../actions';
 
 import { Button, Card, CardSection } from './common';
 import EmployeeForm from './EmployeeForm';
 
-class EmployeeCreate extends Component {
+class EmployeeEdit extends Component {
     onButtonPress() {
         const { name, phone, shift } = this.props;
-        this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
+        this.props.employeeEdit({ name, phone, shift: shift || 'Monday' });
     }
 
     render() {
         // const { name, phone } = this.props;
         return (
             <Card>
-                
                 <EmployeeForm {...this.props} />
-
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Create
@@ -34,5 +32,5 @@ const mapStateToProps = (state) => {
     return { name, phone, shift };
 };
 
-export default connect(mapStateToProps, { employeeFormUpdated, employeeCreate })(EmployeeCreate);
+export default connect(mapStateToProps, { employeeFormUpdated, employeeEdit })(EmployeeEdit);
 
